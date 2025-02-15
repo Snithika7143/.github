@@ -23,7 +23,7 @@ jobs:
         run: mkdir target
 
       - name: Compile Java files
-        run: javac -d target src\main\java\com\example\App.java
-
+        run: javac -d target  C:\Users\snith\Lab3\Lab3-second\App.java
+       
       - name: Run Java Application
         run: java -cp target com.example.App
