@@ -4,7 +4,7 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
@@ -16,11 +16,14 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Go to directory
-        run: cd Module\ 03/lab
+      - name: Navigate to project directory
+        run: cd "Module 03\lab"
+
+      - name: Create target directory
+        run: mkdir target
 
       - name: Compile Java files
-        run: javac src/main/java/com/example/App.java
+        run: javac -d target src\main\java\com\example\App.java
 
       - name: Run Java Application
-        run: java -cp src/main/java/com/example App
+        run: java -cp target com.example.App
