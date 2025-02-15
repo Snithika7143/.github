@@ -16,14 +16,11 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
 
-      - name: Navigate to project directory
-        run: cd "Module 03/lab"
-
-      - name: Create target directory
-        run: mkdir -p target
+      - name: Go to directory
+        run: cd Module\ 03/lab
 
       - name: Compile Java files
-        run: javac -d target src/main/java/com/example/*.java
+        run: javac src/main/java/com/example/App.java
 
       - name: Run Java Application
-        run: java -cp target com.example.App
+        run: java -cp src/main/java/com/example App
